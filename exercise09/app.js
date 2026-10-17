@@ -1,0 +1,17 @@
+const group1 = [101, 102, 103];
+const group2 = [103, 104, 105];
+const enrolled = [...group1, ...group2];
+const uniqueIds = [...new Set(enrolled)];
+const average = (...grades) => grades.length ? grades.reduce((sum, grade) => sum + grade, 0) / grades.length : 0;
+const grades = new Map();
+grades.set(101, 80);
+grades.set(102, 90);
+grades.set(103, 75);
+grades.set(104, 88);
+grades.set(105, 95);
+grades.set(101, 85);
+console.log("Student 101:", grades.get(101));
+grades.delete(105);
+console.log("Average:", average(...grades.values()));
+const result = uniqueIds.filter(id => grades.has(id)).map(id => ({ id, grade: grades.get(id) }));
+console.log(result);

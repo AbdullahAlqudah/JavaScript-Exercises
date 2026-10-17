@@ -1,0 +1,11 @@
+const square = number => number * number;
+const isEven = number => number % 2 === 0;
+const totalPrice = products => products.reduce((total, product) => total + product.price, 0);
+const numbers = [1, 2, 3, 4, 5, 6];
+const products = [{ name: "Book", price: 10 }, { name: "Pen", price: 2 }];
+console.log(square(5));
+console.log(isEven(6));
+console.log(totalPrice(products));
+console.log(numbers.map(number => number * 2));
+console.log(numbers.filter(isEven));
+console.log(numbers.reduce((sum, number) => sum + number, 0));
